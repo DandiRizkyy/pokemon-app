@@ -10,9 +10,7 @@ import {
   FlatList,
   TouchableOpacity,
   Button,
-  Alert,
   StyleSheet,
-  Pressable,
 } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import useFetch from "../custom-hook/useFetch";
@@ -34,13 +32,13 @@ const Home = () => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <View>
+        <View style={{ borderStyle: "solid" }}>
           <Image
             source={{
-              uri: "https://reactnative.dev/docs/assets/p_cat2.png",
+              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png",
             }}
             style={{
-              width: 200,
+              width: 500,
               height: 200,
             }}
           />
@@ -69,10 +67,7 @@ const Home = () => {
                 source={{
                   uri: "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/1.png",
                 }}
-                style={{
-                  width: 200,
-                  height: 200,
-                }}
+                style={{}}
               />
               <FlatList
                 data={data.abilities}
@@ -83,7 +78,7 @@ const Home = () => {
                         textAlign: "center",
                       }}
                     >
-                      {item.ability.name}
+                      {`Ability : ${item.ability.name}`}
                     </Text>
                   </View>
                 )}
